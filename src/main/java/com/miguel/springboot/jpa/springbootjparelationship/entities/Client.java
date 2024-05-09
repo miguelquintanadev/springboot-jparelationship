@@ -27,7 +27,8 @@ public class Client {
 
     // @JoinColumn (name = "client_id")
     @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinTable(name = "tbl_clientes_to_direcciones",
+    @JoinTable(
+    name = "tbl_clientes_to_direcciones",
     joinColumns = @JoinColumn(name = "id_cliente"),
     inverseJoinColumns = @JoinColumn(name = "id_direcciones"),
     uniqueConstraints = @UniqueConstraint(columnNames = {"id_direcciones"}))
